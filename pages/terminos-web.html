@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Teen Informatics | Términos y Condiciones</title>
+    <meta name="description" content="Conoce los términos, formas de pago, mantenimiento y costos de actualización para nuestros servicios de diseño web y brochure.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../assets/img-hero/favicon.png">
+
+    <style>
+        /* ================= ESTILOS EXCLUSIVOS PARA TÉRMINOS ================= */
+        .terminos-section {
+            position: relative;
+            padding: 120px 0 80px;
+            background: url('assets/img-hero/fondo.png') center/cover no-repeat fixed;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .terminos-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .terminos-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .terminos-header h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #9b4dff, #1e90ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+        }
+        .terminos-header p {
+            font-size: 1.1rem;
+            color: #4b5563;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .terminos-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(4px);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(155, 77, 255, 0.1);
+        }
+        .terminos-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 40px -15px rgba(0, 0, 0, 0.15);
+        }
+        .terminos-card h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #9b4dff, #1e90ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            border-left: 4px solid #9b4dff;
+            padding-left: 1rem;
+        }
+        .plan-detalle {
+            margin: 1.5rem 0;
+            border-bottom: 1px solid #e9eef3;
+            padding-bottom: 1rem;
+        }
+        .plan-detalle:last-child {
+            border-bottom: none;
+        }
+        .plan-detalle h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        .plan-detalle h3 i {
+            color: #9b4dff;
+            font-size: 1.3rem;
+        }
+        .badge-mensualidad {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff69b4, #9b4dff);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+        .plan-detalle ul {
+            list-style: none;
+            padding-left: 1.5rem;
+        }
+        .plan-detalle li {
+            margin-bottom: 0.65rem;
+            position: relative;
+            color: #4b5563;
+            line-height: 1.45;
+        }
+        .plan-detalle li::before {
+            content: "✓";
+            color: #2ecc71;
+            position: absolute;
+            left: -1.4rem;
+            font-weight: bold;
+        }
+        .precio-act {
+            font-size: 1.4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #9b4dff, #1e90ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .grid-precios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .grid-precios div {
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.2s;
+            border: 1px solid #e2e8f0;
+        }
+        .grid-precios div:hover {
+            background: #f1f5f9;
+            transform: translateY(-2px);
+        }
+        .grid-precios strong {
+            display: block;
+            font-size: 1.2rem;
+            color: #1f2937;
+            margin-bottom: 0.3rem;
+        }
+        .small {
+            font-size: 0.85rem;
+            color: #6b7280;
+        }
+        .btn-service {
+            display: inline-block;
+            background: linear-gradient(135deg, #9b4dff, #1e90ff);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+        .btn-service:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(155, 77, 255, 0.3);
+        }
+        /* Garantizar que el botón "ir arriba" se vea */
+        .scroll-to-top {
+            display: flex !important;
+            z-index: 1001 !important;
+        }
+        @media (max-width: 768px) {
+            .terminos-section {
+                padding: 100px 0 60px;
+            }
+            .terminos-header h1 {
+                font-size: 2rem;
+            }
+            .terminos-card {
+                padding: 1.5rem;
+            }
+            .plan-detalle h3 {
+                font-size: 1.1rem;
+            }
+            .grid-precios {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="teen">Teen</span>
+                <span style="font-weight:300">Informatics</span>
+            </a>
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../index.html#porque-elegirnos">¿Porque Elegirnos?</a></li>
+                <li><a href="../index.html#servicios">Servicios</a></li>
+                <li><a href="../index.html#impresion">Impresión</a></li>
+                <li><a href="../index.html#diseno-web">Diseño Web</a></li>
+                <li><a href="../index.html#invitaciones">Invitaciones</a></li>
+                <li><a href="../index.html#brochures">Brochure</a></li>
+                <li><a href="../index.html#contacto">Contacto</a></li>
+                <li class="whatsapp-item">
+                    <a href="https://wa.me/5219901182550" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp whatsapp-icon"></i>
+                        Envíame un mensaje
+                    </a>
+                </li>
+                <li class="social-icons-group">
+                    <div class="social-icons-wrapper">
+                        <a href="https://facebook.com/tu-pagina" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com/tu-perfil" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://youtube.com/@tu-canal" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://tiktok.com/@tu-usuario" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://threads.net/@tu-usuario" target="_blank" rel="noopener noreferrer" aria-label="Threads">
+                            <i class="fab fa-threads"></i>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="terminos-section">
+            <div class="terminos-container">
+                <div class="terminos-header">
+                    <h1>Términos y condiciones</h1>
+                    <p>Conoce los detalles de nuestros planes de diseño web, brochures, formas de pago y condiciones generales.</p>
+                </div>
+
+                <!-- ================= PLANES DE SITIO WEB ================= -->
+                <div class="terminos-card">
+                    <h2>📌 Planes de sitio web</h2>
+                    
+                    <div class="plan-detalle">
+                        <h3><i class="fas fa-rocket"></i> Plan Emprendedor</h3>
+                        <ul>
+                            <li><strong>Landing Page profesional</strong> – Página única optimizada para convertir visitantes en clientes potenciales desde el primer contacto.</li>
+                            <li><strong>2 diseños a escoger</strong> – Maquetas prediseñadas que puedes personalizar según los colores y estilo de tu marca.</li>
+                            <li><strong>Incluye carrusel de imágenes</strong> – Para mostrar tus productos o servicios de forma dinámica y atractiva.</li>
+                            <li><strong>Hasta 5 imágenes optimizadas</strong> – Edición básica incluida (recorte, brillo, tamaño adecuado para web).</li>
+                            <li><strong>1 formulario de contacto</strong> – Para recibir mensajes de tus clientes directamente en tu correo.</li>
+                            <li><strong>Enlaces a redes sociales</strong> – Conexión directa con tus perfiles para ampliar tu comunidad.</li>
+                            <li><strong>Diseño totalmente responsivo</strong> – Se ve perfecto en móviles, tablets y computadoras, garantizando una experiencia uniforme.</li>
+                            <li><strong>Botón flotante de WhatsApp</strong> – Comunicación inmediata para resolver dudas o cerrar ventas.</li>
+                            <li><strong>1 mes de soporte básico</strong> – Asistencia técnica limitada a consultas sobre funcionamiento del sitio.</li>
+                            <li><strong>Hosting y dominio GRATUITO por 3 meses</strong> – Después de este periodo, el mantenimiento mensual es de <strong class="badge-mensualidad">$159 MXN/mes</strong>.</li>
+                        </ul>
+                    </div>
+
+                    <div class="plan-detalle">
+                        <h3><i class="fas fa-chart-line"></i> Plan Negocio <span class="badge-mensualidad">Más popular</span></h3>
+                        <ul>
+                            <li><strong>Sitio web profesional de 7 secciones</strong> – Inicio, Servicios, Nosotros, Portafolio, Blog, Contacto y una sección extra a elegir.</li>
+                            <li><strong>2 diseños modernos a escoger</strong> – Con opción de personalización avanzada para alinearse con tu identidad visual.</li>
+                            <li><strong>Carrusel de imágenes avanzado</strong> – Con efectos de transición, controles y adaptación a diferentes resoluciones.</li>
+                            <li><strong>Hasta 10 imágenes editadas por diseñador</strong> – Corrección de color, optimización de peso y formato webp.</li>
+                            <li><strong>2 formularios interactivos vía WhatsApp</strong> – Contacto y cotización, con notificaciones automáticas.</li>
+                            <li><strong>Optimización SEO básica</strong> – Configuración de metaetiquetas, Google Analytics, Search Console y mapa del sitio XML.</li>
+                            <li><strong>Seguridad anti-spam y firewall básico</strong> – Protección contra inyecciones y comentarios no deseados.</li>
+                            <li><strong>Hosting y dominio GRATUITO por 5 meses</strong> – Después, <strong class="badge-mensualidad">$159 MXN/mes</strong> (o pago anual con 10% de descuento).</li>
+                        </ul>
+                    </div>
+
+                    <div class="plan-detalle">
+                        <h3><i class="fas fa-building"></i> Plan Pyme / Business</h3>
+                        <ul>
+                            <li><strong>Sitio web empresarial de 9 secciones</strong> – Mayor profundidad de contenido, incluyendo portafolio ampliado, equipo y preguntas frecuentes.</li>
+                            <li><strong>3 diseños modernos a escoger</strong> – Plantillas exclusivas de alta calidad con atención al detalle.</li>
+                            <li><strong>Carrusel de imágenes avanzado con botones</strong> – Incluye llamadas a la acción personalizadas dentro del carrusel.</li>
+                            <li><strong>Hasta 15 imágenes editadas por diseñador</strong> – Edición profesional con retoque y balance de color.</li>
+                            <li><strong>3 formularios avanzados</strong> – Contacto, cotización, registro de usuarios o encuestas, con validación en tiempo real.</li>
+                            <li><strong>Optimización SEO básica avanzada</strong> – Estructura de URL amigable, metadatos enriquecidos, archivo robots.txt.</li>
+                            <li><strong>Certificado SSL incluido</strong> – Sitio seguro HTTPS que genera confianza y mejora el posicionamiento.</li>
+                            <li><strong>Optimización de velocidad avanzada</strong> – Caché, compresión de recursos, lazy loading y minificación de código.</li>
+                            <li><strong>Hosting y dominio GRATUITO por 1 año</strong> – Luego <strong class="badge-mensualidad">$159 MXN/mes</strong> (descuento del 10% en pago anual).</li>
+                        </ul>
+                    </div>
+                    <p class="small" style="margin-top: 1rem;"><strong>Forma de pago para sitios web:</strong> Se requiere un <strong>50% de anticipo</strong> para comenzar el proyecto. El saldo restante se paga al momento de la entrega final, antes de publicar el sitio.</p>
+                </div>
+
+
+                <!-- ================= MANTENIMIENTO Y ACTUALIZACIONES (WEB) ================= -->
+                <div class="terminos-card">
+                    <h2>🔧 Mantenimiento y actualizaciones (sitios web)</h2>
+                    <p>Después del periodo gratuito, el sitio web requiere un pago mensual de <strong class="precio-act">$159 MXN</strong> que incluye:</p>
+                    <ul style="margin: 1rem 0 1rem 2rem;">
+                        <li>Hosting y dominio renovado (anualmente se cobra por separado si no se renueva con anticipación).</li>
+                        <li>Certificado SSL activo (para planes que lo incluyen).</li>
+                        <li>Copias de seguridad semanales automatizadas.</li>
+                        <li>Actualizaciones de seguridad y rendimiento del sitio.</li>
+                        <li>Soporte técnico para incidencias relacionadas con el funcionamiento.</li>
+                    </ul>
+                    <p><strong>Pago anual con descuento:</strong> Si prefieres pagar todo el año por adelantado, obtienes un <strong>10% de descuento</strong> sobre el total anual ($159 × 12 = $1,908 → <strong>$1,717 MXN</strong>).</p>
+                    <p>Si necesitas realizar cambios adicionales en tu página (agregar secciones, modificar contenido, subir nuevas imágenes, etc.), los costos son los siguientes:</p>
+                    <div class="grid-precios">
+                        <div><strong>$80 MXN</strong> Cambio de texto menor (hasta 100 palabras).</div>
+                        <div><strong>$150 MXN</strong> Actualización de imágenes (hasta 5 imágenes).</div>
+                        <div><strong>$250 MXN</strong> Creación de nueva sección básica.</div>
+                        <div><strong>$400 MXN</strong> Rediseño parcial de una sección existente.</div>
+                        <div><strong>$500 MXN</strong> Agregar página nueva (hasta 3 secciones).</div>
+                    </div>
+                    <p class="small">* Los precios pueden variar según la complejidad; se cotizará previamente por WhatsApp.</p>
+                </div>
+
+<!-- ================= DISEÑO DE BROCHURE ================= -->
+<div class="terminos-card" id="brochure-termino">
+    <h2>📘 Diseño de Brochure</h2>
+    <p>Nuestro servicio de diseño de brochures ofrece tres planes adaptados a tus necesidades:</p>
+    <ul style="margin: 1rem 0 0 2rem;">
+        <li><strong>Plan Básico – $999 MXN</strong> (hasta 7 hojas). Incluye: diseño con colores de marca, formato PDF digital en RGB y listo para impresión en CMYK, código QR, enlaces a redes sociales, 3 revisiones, entrega en 2 a 4 días hábiles.</li>
+        <li><strong>Plan Profesional – $1,999 MXN</strong> (hasta 12 hojas). Añade: archivos editables EPS e Illustrator (AI), tarjeta de presentación (1 vista), asesoría para impresión, 5 revisiones, entrega en 2 a 4 días hábiles.</li>
+        <li><strong>Plan Empresarial – $2,999 MXN</strong> (hasta 16 hojas). Incluye: hasta 2 códigos QR, catálogo digital dinámico, archivos editables EPS, AI e InDesign (IDD), listo para PowerPoint, tarjeta de presentación (2 vistas), folder corporativo, 7 revisiones, entrega en 4 a 7 días hábiles.</li>
+    </ul>
+    <p><strong>Hojas adicionales:</strong> Cada hoja extra tiene un costo de <strong>$190 MXN</strong> (aplica para cualquier plan).</p>
+    <p><strong>Modificaciones posteriores:</strong> Cambio en una sola hoja (texto o imagen) $77 MXN; rediseño completo del brochure $699 MXN.</p>
+    <p><strong>Entrega:</strong> El brochure se entrega en formato PDF de alta resolución listo para impresión y digital, con vínculos y códigos QR según el plan, vía correo electrónico. Los archivos editables se incluyen en los planes Profesional y Empresarial.</p>
+    <p><strong>Forma de pago:</strong> Se requiere un <strong>50% de anticipo</strong> para comenzar el diseño. El saldo restante se paga al recibir el archivo final.</p>
+    <p class="small" style="margin-top: 1rem;">Los tiempos de entrega varían según el plan (2‑4 días hábiles para Básico y Profesional, 4‑7 días para Empresarial).</p>
+</div>
+
+
+                <!-- ================= FORMAS DE PAGO ================= -->
+                <div class="terminos-card">
+                    <h2>💳 Formas de pago</h2>
+                    <ul style="margin: 0 0 0 2rem;">
+                        <li><strong>Transferencia bancaria (SPEI)</strong> – Cuenta CLABE a nombre de Teen Informatics (compartimos los datos al cotizar).</li>
+                        <li><strong>Depósito en OXXO / 7-Eleven</strong> – Generamos ficha de pago con código de barras.</li>
+                        <li><strong>Tarjeta de crédito/débito</strong> – A través de enlace de pago seguro (Plataforma STP).</li>
+                        <li><strong>PayPal</strong> – Aceptamos pagos internacionales (más comisión del 4%).</li>
+                    </ul>
+                    <p class="small" style="margin-top: 1rem;">Todos los pagos deben realizarse por adelantado (anticipo del 50% para comenzar). El sitio se activa una vez confirmado el primer pago.</p>
+                </div>
+
+                <!-- ================= FACTURACIÓN ================= -->
+                <div class="terminos-card">
+                    <h2>📄 Facturación</h2>
+                    <p>Todos los precios mostrados en nuestra página y cotizaciones <strong>no incluyen IVA</strong>. Al momento de facturar se agregará el 16% correspondiente.</p>
+                    <p>Para solicitar factura deberás proporcionarnos:</p>
+                    <ul style="margin: 1rem 0 0 2rem;">
+                        <li>RFC (con homoclave).</li>
+                        <li>Razón social o nombre completo (según régimen).</li>
+                        <li>Código postal y uso de CFDI (por ejemplo, G03 – Gastos en general).</li>
+                        <li>Correo electrónico donde enviar el CFDI.</li>
+                    </ul>
+                    <p class="small" style="margin-top: 1rem;">Las facturas se emiten en un plazo máximo de 72 horas después de confirmado el pago. Si necesitas factura con retención, indícalo antes de la transacción.</p>
+                </div>
+
+                <!-- ================= CONDICIONES GENERALES ================= -->
+                <div class="terminos-card">
+                    <h2>📜 Condiciones generales</h2>
+                    <ul style="margin: 0 0 0 2rem;">
+                        <li>Los tiempos de entrega se especifican en la cotización (promedio 5‑10 días hábiles para sitios web, 3‑5 para brochures).</li>
+                        <li>La revisión del cliente debe realizarse en un máximo de 7 días después de la entrega de la primera versión.</li>
+                        <li>El soporte gratuito incluye corrección de errores de funcionamiento, no modificaciones de diseño.</li>
+                        <li>Al cancelar el servicio de hosting/dominio, el sitio dejará de estar visible en línea.</li>
+                        <li>Los precios están sujetos a cambios sin previo aviso, pero se respetará la tarifa acordada en la cotización.</li>
+                        <li>Para ambos servicios, se requiere un <strong>50% de anticipo</strong> para iniciar el proyecto. El saldo restante se liquida al recibir el trabajo final.</li>
+                    </ul>
+                </div>
+
+                <div class="terminos-footer" style="text-align: center; margin-top: 2rem;">
+                    <p>Para cualquier duda adicional, no dudes en contactarnos a través de WhatsApp o correo electrónico.</p>
+                    <a href="https://wa.me/5219901182550" target="_blank" class="btn-service">Preguntar por WhatsApp</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Teen<span>Informatics</span></h3>
+                    <p>Creatividad que impacta y transforma tu marca. Soluciones integrales en diseño, impresión y tecnología.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Enlaces rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index.html#servicios">Servicios</a></li>
+                        <li><a href="index.html#porque-elegirnos">¿Por qué elegirnos?</a></li>
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                        <li><a href="index.html#impresion">Impresión</a></li>
+                        <li><a href="index.html#diseno-web">Diseño Web</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="index.html#servicios">Diseño Gráfico</a></li>
+                        <li><a href="index.html#impresion">Impresión</a></li>
+                        <li><a href="index.html#diseno-web">Desarrollo Web</a></li>
+                        <li><a href="index.html#invitaciones">Invitaciones Digitales</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Síguenos</h4>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-threads"></i></a>
+                    </div>
+                    <h4 style="margin-top: 1.5rem;">Contacto directo</h4>
+                    <p><i class="fas fa-phone-alt"></i> +52 1 990 118 2550</p>
+                    <p><i class="fas fa-envelope"></i> teeninformatics@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Teen Informatics. Todos los derechos reservados. | <a href="terminos-web.html" class="footer-link">Términos y condiciones</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botones flotantes -->
+    <a href="https://wa.me/5219901182550" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <button id="scrollToTopBtn" class="scroll-to-top" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="../script.js" defer></script>
+    <script>
+        // Asegurar que el botón "ir arriba" funcione incluso si el script principal falla
+        (function() {
+            const btn = document.getElementById('scrollToTopBtn');
+            if (!btn) return;
+            // Mostrar el botón después de scrollear 300px
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    btn.classList.add('show');
+                } else {
+                    btn.classList.remove('show');
+                }
+            });
+            // Acción al hacer clic
+            btn.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            // Forzar la clase show si ya se ha scrolleado al cargar (por si se recarga abajo)
+            if (window.scrollY > 300) {
+                btn.classList.add('show');
+            }
+        })();
+    </script>
+    <script>
+    // Re-inicializar menú móvil por si el script principal no se ejecuta
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                navLinks.classList.toggle('active');
+                menuToggle.classList.toggle('active');
+            });
+            const allLinks = navLinks.querySelectorAll('a');
+            allLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                });
+            });
+            document.addEventListener('click', (e) => {
+                if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+                    navLinks.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                }
+            });
+        }
+    });
+</script>
+</body>
+</html>
