@@ -769,6 +769,7 @@ html, body {
 .tarjetas-section {
     position: relative;
     padding: 80px 0;
+    background-color: #f2f7ff;
     background-image: url('assets/img-hero/fondo.png');
     background-size: cover;
     background-position: center;

@@ -294,7 +294,7 @@ function initStats() {
                         animateNumber(numberElem, target, suffix);
                         numberElem.setAttribute('data-counted', 'true');
                         timeouts.delete(item);
-                    }, 1000);
+                    }, 500);
                     timeouts.set(item, timerId);
                 }
             } else {
