@@ -942,6 +942,10 @@ html, body {
     .tarjetas-section .plan-price {
         font-size: 2.2rem;
     }
+    .planes-grid-2 {
+        grid-template-columns: 1fr;   /* ← columna única en tablet/móvil */
+        width: 98%;                    /* ← separación entre cards en móvil */
+    }
 }
 
 @media (max-width: 480px) {
@@ -953,6 +957,11 @@ html, body {
     }
     .promo-table {
         font-size: 0.72rem;
+    }
+    
+    .planes-grid-2 {
+        grid-template-columns: 1fr;   /* ← columna única en tablet/móvil */
+        width: 100%;                    /* ← separación entre cards en móvil */
     }
 }
 
