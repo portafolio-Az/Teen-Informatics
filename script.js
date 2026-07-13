@@ -257,7 +257,7 @@ function initAlternatingCard() {
 // ============================================================
 function initScrollAnimations() {
     const targets = document.querySelectorAll(
-        '.porque-titulo-main, .porque-parrafo, .servicio-card, .porque-confianza, .plan-card'
+        '.porque-titulo-main, .porque-parrafo, .servicio-card, .porque-confianza, .plan-card, .proceso-step, .seguridad-card'
     );
     if (!targets.length) return;
 
@@ -402,7 +402,15 @@ function initShakeInvitacionButtons() {
 function initScrollToTop() {
     const btn = document.getElementById('scrollToTopBtn');
     if (!btn) return;
-    window.addEventListener('scroll', () => btn.classList.toggle('show', window.scrollY > 300));
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+            btn.classList.toggle('show', window.scrollY > 300);
+            ticking = false;
+        });
+    }, { passive: true });
     btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 }
 
@@ -412,6 +420,9 @@ function initScrollToTop() {
 function initSmoothCarousel() {
     const track = document.getElementById('carouselTrack');
     if (!track) return;
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) return; // deja el carrusel estático, sin animación continua
 
     let pos  = 0;
     let half = 0;
@@ -494,7 +505,7 @@ function initTestimonials() {
     function fill(face, idx) {
         const t = TESTIMONIALS[idx % TOTAL];
         face.innerHTML =
-            `<img src="${t.photo}" alt="Avatar" class="testimonial-avatar">
+            `<img src="${t.photo}" alt="Avatar" class="testimonial-avatar" loading="lazy" decoding="async">
              <div class="testimonial-name">${t.name}</div>
              <div class="testimonial-company">${t.company}</div>
              <div class="testimonial-comment">${t.comment}</div>`;
@@ -522,6 +533,33 @@ function initTestimonials() {
 
     init();
     setInterval(cycle, 6000);
+}
+
+// ============================================================
+//  ACORDEÓN DE PREGUNTAS FRECUENTES
+// ============================================================
+function initFaqAccordion() {
+    const items = document.querySelectorAll('.faq-item');
+    if (!items.length) return;
+
+    items.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer   = item.querySelector('.faq-answer');
+
+        question.addEventListener('click', () => {
+            const isOpen = item.classList.contains('open');
+
+            items.forEach(other => {
+                other.classList.remove('open');
+                other.querySelector('.faq-answer').style.maxHeight = null;
+            });
+
+            if (!isOpen) {
+                item.classList.add('open');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            }
+        });
+    });
 }
 
 // ============================================================
@@ -580,6 +618,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollToTop();
     initSmoothCarousel();
     initTestimonials();
+    initFaqAccordion();
     initPageTransitions();
     initContactForm();
 });
